@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="阿涛,个人博客">
+    <meta name="description" content="阿涛的个人博客,用于发表原创文章,关注微信公众号：Dapr。">
+    <title>🤣@ViewData["Title"]阿涛Plus⭐⭐⭐</title>
+    <base href="/" />
+    <environment include="Development"><link rel="stylesheet" href="~/css/app.css" asp-append-version="true" /></environment>
+    <environment exclude="Development"><link rel="stylesheet" href="https://static.meowv.com/css/app.css"></environment>
+    @await RenderSectionAsync("styles", required: false)
+</head>
+<body>
+    <div class="wrapper">
+        @{ await Html.RenderPartialAsync("_Header"); }
+        <div class="main">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+        @{ await Html.RenderPartialAsync("_Footer"); }
+    </div>
+    <environment include="Development">
+    <script src="~/live2d/L2Dwidget.min.js"></script>
+    <script src="~/js/app.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://static.meowv.com/live2d/L2Dwidget.min.js"></script>
+        <script src="https://static.meowv.com/js/app.js"></script>
+    </environment>
+    @await RenderSectionAsync("scripts", required: false)
+</body>
+</html>
